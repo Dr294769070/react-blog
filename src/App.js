@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+import {NavLink, Route, Switch, Redirect} from 'react-router-dom'
+
 import './App.css';
+
+import Homepage from './containers/homepage/index'
+import Books from './containers/books/index'
+import Setting from './containers/setting/index'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="App-left">
+          <NavLink to="/homepage" className="app-nav-item">主页</NavLink>
+          <NavLink to="/books" className="app-nav-item">书籍</NavLink>
+          <NavLink to="/setting" className="app-nav-item">设置</NavLink>
+      </div>
+      <div className="App-right">
+          <Switch>
+              <Route path="/homepage" component={Homepage}></Route>
+              <Route path="/books" component={Books}></Route>
+              <Route path="/setting" component={Setting}></Route>
+              <Redirect to="/homepage"></Redirect>
+          </Switch>
+      </div>
     </div>
   );
 }
