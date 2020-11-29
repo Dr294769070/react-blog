@@ -1,10 +1,13 @@
 import {NavLink, Route, Switch, Redirect} from 'react-router-dom'
+import {Provider} from 'react-redux'
 
 import './App.css';
 
 import Homepage from './containers/homepage/index'
 import Books from './containers/books/index'
 import Setting from './containers/setting/index'
+
+import store from './redux/store'
 
 function App() {
   return (
@@ -16,9 +19,9 @@ function App() {
       </div>
       <div className="App-right">
           <Switch>
-              <Route path="/homepage" component={Homepage}></Route>
+              <Route path="/homepage" render={(props) => <Provider {...props} store={store}><Homepage></Homepage></Provider>}></Route>
               <Route path="/books" component={Books}></Route>
-              <Route path="/setting" component={Setting}></Route>
+              <Route path="/setting" render={(props) => <Provider {...props} store={store}><Setting></Setting></Provider>}></Route>
               <Redirect to="/homepage"></Redirect>
           </Switch>
       </div>
