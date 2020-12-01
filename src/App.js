@@ -13,9 +13,9 @@ function App() {
   return (
     <div className="App">
       <div className="App-left">
-          <NavLink to="/homepage" className="app-nav-item">主页</NavLink>
-          <NavLink to="/books" className="app-nav-item">书籍</NavLink>
-          <NavLink to="/setting" className="app-nav-item">设置</NavLink>
+          <NavLink to="/homepage" activeClassName="activeNav" className="app-nav-item">主页</NavLink>
+          <NavLink to="/books" activeClassName="activeNav" className="app-nav-item">书籍</NavLink>
+          <NavLink to="/setting" activeClassName="activeNav" className="app-nav-item">设置</NavLink>
       </div>
       <div className="App-right">
           <Switch>

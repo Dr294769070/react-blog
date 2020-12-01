@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import { Form, Input, Button } from 'element-react';
 import {connect} from 'react-redux'
+import axios from 'axios'
 import './index.css'
 import { setUserMap } from '../../redux/actions'
 
@@ -43,14 +44,38 @@ class Home extends Component {
         )
     }
     componentDidMount() {
+        axios.get('/getUserInfo?id=2')
+        .then((response) => {
+            const data = response.data
+            this.setState(
+                {
+                    form: data
+                }
+            )
+        })
+        .catch(function (error) {
+            console.log('err', error);
+        });
         this.setState({
             form: this.props.form
         })
     }
     onSubmit = () => {
         // 改变state.form 重设store中的数据
-        const map = this.state.form
-        this.props.setUserMap(map)
+        axios.get('/updateUserInfo', {
+            params: {
+              id: 2,
+              name: this.state.form.name,
+              avatar: this.state.form.avatar,
+              classicQuotations: this.state.form.classicQuotations || ''
+            }
+          })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
     }
     onChange = (type, val) => {
         // 修改表单组件数据

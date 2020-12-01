@@ -27,3 +27,7 @@
   background: #58B7FF;
   color: #fff;
 }
+
+.App .activeNav{
+  background: rgb(225, 243, 216);
+}
