@@ -8,6 +8,8 @@ import Books from './containers/books/index'
 import Setting from './containers/setting/index'
 import Apps from './containers/apps/index'
 
+import MyMap from './containers/myApps/myMap'
+
 import store from './redux/store'
 
 function App() {
@@ -25,6 +27,7 @@ function App() {
               <Route path="/books" component={Books}></Route>
               <Route path="/setting" render={(props) => <Provider {...props} store={store}><Setting></Setting></Provider>}></Route>
               <Route path="/apps" component={Apps}></Route>
+              <Route path="/myMap" component={MyMap}></Route>
               <Redirect to="/apps"></Redirect>
           </Switch>
       </div>

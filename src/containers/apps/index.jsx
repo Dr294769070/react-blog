@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {NavLink } from 'react-router-dom'
 import apps from './apps.json'
 
 import './index.css'
@@ -11,10 +12,10 @@ export default class Apps extends Component {
                 {
                     appList.map(item => {
                         return (
-                            <div className="item" onClick={(item) => this.toPage(item.path)}>
+                            <NavLink to="/myMap" className="item">
                                 <img className="icon" object-fit="contain" alt="" src={item.icon} />
                                 <div className="name">{item.name}</div>
-                            </div>
+                            </NavLink>
                         )
                     })
                 }

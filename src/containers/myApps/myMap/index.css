@@ -1,0 +1,7 @@
+.myMap{
+    padding: 20px
+}
+.myMap #container{
+    width: 600px;
+    height: 400px;
+}

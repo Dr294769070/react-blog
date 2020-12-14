@@ -4,6 +4,7 @@
   "private": true,
   "proxy": "http://127.0.0.1:8888",
   "dependencies": {
+    "@amap/amap-jsapi-loader": "0.0.7",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.2.2",
