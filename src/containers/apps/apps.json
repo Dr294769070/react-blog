@@ -1,0 +1,9 @@
+{
+    "appList" : [
+        {
+            "name": "地图",
+            "path": "",
+            "icon": "https://frank-1302698468.cos.ap-beijing.myqcloud.com/reactBlog/icons/%E5%9C%B0%E5%9B%BE.png"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+.apps .item{
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.item .icon{
+    width: 64px;
+    height: 64px;
+    margin-bottom: 10px;
+}
+.item .name{
+    height: 20px;
+    line-height: 1;
+    font-size: 16px;
+    text-align: center;
+}
